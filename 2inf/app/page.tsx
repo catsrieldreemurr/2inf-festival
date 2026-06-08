@@ -1,18 +1,16 @@
-import { Button } from "@/components/ui/button"
+import Navbar from "@/components/ui/navbar"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
+    <div>
+        <div className="relative h-[50rem] w-full flex items-center justify-center bg-black/40"> 
+          <div className="absolute inset-0 bg-[url(/testpic.jpg)] bg-cover bg-center opacity-100 -z-10"></div>
+
+          <Navbar></Navbar>
+
+          <div className="text-white bg-black/75 p-5">
+            <h1 className="text-2xl">2INF-Festivalen 2026</h1>
+          </div>
       </div>
     </div>
   )
