@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'})
 
@@ -27,4 +28,8 @@ export default function RootLayout({
       </body>
     </html>
   )
+}
+
+export const metadata: Metadata = {
+  title: '2INF-Festivalen 2026'
 }
