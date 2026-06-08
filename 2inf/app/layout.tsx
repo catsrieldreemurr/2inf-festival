@@ -31,5 +31,6 @@ export default function RootLayout({
 }
 
 export const metadata: Metadata = {
-  title: '2INF-Festivalen 2026'
+  title: '2INF-Festivalen 2026',
+  description: 'Informasjonsside for 2INF-festivalen 2026.'
 }
