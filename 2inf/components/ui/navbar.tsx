@@ -15,7 +15,7 @@ export default function Navbar(){
                 <div className="sm:flex flex-row gap-6 items-center justify-center hidden">
                     <NavbarLink href="/">Om Festivalen</NavbarLink>
                     <NavbarLink href="/program">Program og Gjester</NavbarLink>
-                    <NavbarLink href="/">Kart</NavbarLink>    
+                    <NavbarLink href="/map">Kart</NavbarLink>    
                 </div>
 
                 <Popover>
@@ -29,7 +29,7 @@ export default function Navbar(){
                         <div className="flex flex-col gap-5 text-center">
                             <NavbarLink href="/">Om Festivalen</NavbarLink>
                             <NavbarLink href="/program">Program og Gjester</NavbarLink>
-                            <NavbarLink href="/">Kart</NavbarLink>
+                            <NavbarLink href="/map">Kart</NavbarLink>
                         </div>
                     </PopoverContent>
                 </Popover>

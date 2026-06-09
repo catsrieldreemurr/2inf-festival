@@ -1,3 +1,4 @@
+import Footerbar from "@/components/ui/footer"
 import Hero from "@/components/ui/hero"
 import Navbar from "@/components/ui/navbar"
 import Typography from "@/components/ui/typography"
@@ -10,6 +11,8 @@ export default function Page() {
             <Typography variant="h1" isBold>2INF-Festivalen 2027</Typography>
             <Typography>Innlandets beste Møtearena</Typography>
         </Hero>
+
+        <Footerbar></Footerbar>
     </div>
   )
 }

@@ -19,15 +19,15 @@ export default function Footerbar(){
                 
                 <FooterLink href="/">- Om Festivalen</FooterLink>
                 <FooterLink href="/program">- Program og Gjester</FooterLink>
-                <FooterLink href="/">- Kart</FooterLink>
+                <FooterLink href="/map">- Kart</FooterLink>
                 
             </FooterBox>
 
             <FooterBox>
                 <Typography variant="h1" isBold>Kontakt Oss</Typography>
-                <Typography style="mb-5">Har du noen spørsmål, eller vil du vite mer? Ta kontakt.</Typography>
-                <AssignIcon src="/phone.png" imageAlt="Phone">+12345678</AssignIcon>
-                <AssignIcon src="/email.png" imageAlt="Email">festivalsjef@2inf.no</AssignIcon>
+                <Typography style="mb-5" isCentered>Har du noen spørsmål, eller vil du vite mer? Ta kontakt.</Typography>
+                <AssignIcon src="/phone.png" imageAlt="Phone">+47 12345678</AssignIcon>
+                <AssignIcon src="/email.png" imageAlt="Email"><a href={"mailto:festivalsjef@2inf.no"}>festivalsjef@2inf.no</a></AssignIcon>
             </FooterBox>
         </footer>
     )
