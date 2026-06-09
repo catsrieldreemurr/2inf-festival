@@ -13,9 +13,9 @@ export default function Navbar(){
                 <Typography variant="h2" isBold>2INF-Festivalen</Typography>
 
                 <div className="sm:flex flex-row gap-6 items-center justify-center hidden">
-                    <NavbarLink href="https://YouTube.com">Om Festivalen</NavbarLink>
-                    <Link href={"https://YouTube.com"}>sewr</Link>
-                    <Link href={"https://YouTube.com"}>sewr</Link>
+                    <NavbarLink href="/">Om Festivalen</NavbarLink>
+                    <NavbarLink href="/">Program og Gjester</NavbarLink>
+                    <NavbarLink href="/">Kart</NavbarLink>
                 </div>
 
                 <Popover>
@@ -27,8 +27,9 @@ export default function Navbar(){
 
                     <PopoverContent>
                         <div className="flex flex-col gap-5 text-center">
-                            <NavbarLink href="https://YouTube.com">Om Festivalen</NavbarLink>
-                            <NavbarLink href="https://YouTube.com">Om Festivalen</NavbarLink>
+                            <NavbarLink href="/">Om Festivalen</NavbarLink>
+                            <NavbarLink href="/">Program og Gjester</NavbarLink>
+                            <NavbarLink href="/">Kart</NavbarLink>
                         </div>
                     </PopoverContent>
                 </Popover>

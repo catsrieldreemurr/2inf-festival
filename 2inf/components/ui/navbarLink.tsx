@@ -9,7 +9,7 @@ interface SetProps{
 
 export default function ({children, href}:SetProps) {
     return ( 
-        <Link href={href}>
+        <Link href={href} className="hover:bg-gray-200 p-2 rounded-xl">
             <Typography>{children}</Typography>
         </Link>
     )
