@@ -7,7 +7,7 @@ export default function Page() {
     <div>
         <Navbar></Navbar>
         <Hero href="/testpic.jpg">
-            <Typography variant="h1" isBold>2INF-Festivalen 2026</Typography>
+            <Typography variant="h1" isBold>2INF-Festivalen 2027</Typography>
             <Typography>Innlandets beste Møtearena</Typography>
         </Hero>
     </div>
