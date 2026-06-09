@@ -1,3 +1,4 @@
+import CorporationsSection from "@/components/ui/corporationsSection";
 import Hero from "@/components/ui/hero";
 import Navbar from "@/components/ui/navbar";
 import PreseentationSection from "@/components/ui/presentationSection";
@@ -14,7 +15,7 @@ export default function Page(){
             </Hero>
 
             <div className="flex justify-center m-5">
-                <Tabs defaultValue="Workshops" className="flex justify-center items-center">
+                <Tabs defaultValue="Workshops" className="flex justify-center items-center min-h-screen">
                     <TabsList variant={"line"}>
                         <TabsTrigger value="Workshops" className="text-xl">Workshops</TabsTrigger>
                         <TabsTrigger value="Foredrag" className="text-xl">Foredrag</TabsTrigger>
@@ -22,6 +23,7 @@ export default function Page(){
                     </TabsList>
                     <TabsContent value="Workshops"><WorkshopSection></WorkshopSection></TabsContent>
                     <TabsContent value="Foredrag"><PreseentationSection></PreseentationSection> </TabsContent>
+                    <TabsContent value="Bedrifter"><CorporationsSection></CorporationsSection></TabsContent>
                 </Tabs>
             </div>
             
