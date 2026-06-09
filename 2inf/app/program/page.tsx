@@ -1,4 +1,5 @@
 import CorporationsSection from "@/components/ui/corporationsSection";
+import Footerbar from "@/components/ui/footer";
 import Hero from "@/components/ui/hero";
 import Navbar from "@/components/ui/navbar";
 import PreseentationSection from "@/components/ui/presentationSection";
@@ -26,6 +27,8 @@ export default function Page(){
                     <TabsContent value="Bedrifter"><CorporationsSection></CorporationsSection></TabsContent>
                 </Tabs>
             </div>
+
+            <Footerbar></Footerbar>
             
         </div>
     )
