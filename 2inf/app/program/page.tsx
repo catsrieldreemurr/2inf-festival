@@ -8,7 +8,6 @@ export default function Page(){
             <Navbar></Navbar>
             <Hero href="/room.jpg">
                 <Typography variant="h1" isBold>Program og Gjester</Typography>
-                <Typography>Innlandets beste Møtearena</Typography>
             </Hero>
         </div>
     )
