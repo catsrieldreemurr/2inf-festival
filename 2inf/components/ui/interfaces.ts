@@ -70,13 +70,13 @@ interface Workshops{
 }
 
 interface AllFetchedData{
-    festival: Festival
-    bedrifter: Bedrifter
-    laerere: Laerere
-    elever: Elever
-    rom: Rom
-    foredrag: Foredrag
-    workshops: Workshops
+    festival: Festival[]
+    bedrifter: Bedrifter[]
+    laerere: Laerere[]
+    elever: Elever[]
+    rom: Rom[]
+    foredrag: Foredrag[]
+    workshops: Workshops[]
 }
 
 export type {Festival as Festival}

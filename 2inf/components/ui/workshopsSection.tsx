@@ -3,30 +3,15 @@ import { useEffect, useState } from "react";
 
 import { AllFetchedData } from "./interfaces";
 import Typography from "./typography";
+import { FetchData } from "./getData";
 
 export default function WorkshopSection(){
-    const [data, setData] = useState<AllFetchedData[] | null>(null)
-    const [failed, setFailed] = useState(false)
+    const [data, setData] = useState<AllFetchedData | null>(null)
 
     useEffect(() => {
         async function Getdata(){
-            const req = await fetch("/api/readJSON")
-            const newData = await req.json()
-
-            console.log(newData)
-
-            try{
-                if(req.status === 200) {
-                    setData(newData)
-                    setFailed(false)
-                } else {
-                    setData([])
-                    setFailed(req.status !== 200 || false)
-                }
-            } catch (err) {
-                setFailed( true)
-                setData([])
-            }
+            const result = await FetchData();
+            setData(result)
         }
 
         Getdata()
@@ -44,6 +29,8 @@ export default function WorkshopSection(){
                             <div>
                                 <Typography>{index.startTid} - {index.sluttTid}</Typography>
                             </div>
+
+                            <Typography>Rom: {index.romId}</Typography>
                         </div>
                     )
                 }) }

@@ -13,7 +13,7 @@ export default function Page(){
             </Hero>
 
             <div className="flex justify-center m-5">
-                <Tabs defaultValue="Worskhops">
+                <Tabs defaultValue="Workshops">
                     <TabsList variant={"line"}>
                         <TabsTrigger value="Workshops" className="text-xl">Workshops</TabsTrigger>
                         <TabsTrigger value="Foredrag" className="text-xl">Foredrag</TabsTrigger>
