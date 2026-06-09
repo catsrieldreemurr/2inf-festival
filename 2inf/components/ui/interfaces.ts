@@ -1,4 +1,4 @@
-export interface Festival{
+interface Festival{
     navn: string
     dato: string
     sted: string
@@ -9,7 +9,7 @@ export interface Festival{
     sluttTid: string
 }
 
-export interface Bedrifter{
+interface Bedrifter{
     id: number
     navn: string
     epost: string
@@ -21,7 +21,7 @@ export interface Bedrifter{
     beskrivelse: string
 }
 
-export interface Laerere{
+interface Laerere{
     id: number
     navn: string
     epost: string
@@ -29,7 +29,7 @@ export interface Laerere{
     telefon: string
 }
 
-export interface Elever{
+interface Elever{
     id: number
     navn: string
     klasse: string
@@ -38,7 +38,7 @@ export interface Elever{
     epost: string
 }
 
-export interface Rom{
+interface Rom{
     id: number
     romnummer: string
     bygning: string
@@ -46,7 +46,7 @@ export interface Rom{
     utstyr: Array<String>
 }
 
-export interface Foredrag{
+interface Foredrag{
     id: number
     tittel: string
     beskrivelse: string
@@ -58,7 +58,7 @@ export interface Foredrag{
     rom: string
 }
 
-export interface Workshops{
+interface Workshops{
     id: number
     tittel: string
     holderBedriftId: number
@@ -68,3 +68,22 @@ export interface Workshops{
     maksPlasser: number
     forkunnskaper: string
 }
+
+interface AllFetchedData{
+    festival: Festival
+    bedrifter: Bedrifter
+    laerere: Laerere
+    elever: Elever
+    rom: Rom
+    foredrag: Foredrag
+    workshops: Workshops
+}
+
+export type {Festival as Festival}
+export type {Bedrifter as Bedrifter}
+export type {Laerere as Laerere}
+export type {Elever as Elever}
+export type {Rom as Rom}
+export type {Foredrag as Foredrag}
+export type {Workshops as Workshops}
+export type {AllFetchedData as AllFetchedData}
