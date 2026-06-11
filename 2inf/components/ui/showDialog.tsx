@@ -8,14 +8,11 @@ import { InputGroup } from "./input-group"
 import { Label } from "./label"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "./select"
 import { Textarea } from "./textarea"
-
-interface setprop{
-    variant: 1 | 2
-}
+import Typography from "./typography"
 
 // Strap in ladies and gentlemen, this is gonna be one HELL of a file
 
-export default function ShowDialog({variant}:setprop){
+export default function ShowDialog(){
     let presName = ""
     let compName = ""
     let desc = ""
@@ -24,6 +21,7 @@ export default function ShowDialog({variant}:setprop){
     let stopTime = ""
 
     const [hasFailed, setHasFailed] = useState(false)
+    const [isSuccesssful, setIsSuccessful] = useState(false)
 
     async function WriteWord() {
     if(presName !== "" && compName !== "" && desc !== "" && room !== "" && startTime !== "" && stopTime !== ""){
@@ -41,15 +39,18 @@ export default function ShowDialog({variant}:setprop){
         })
     });
 
-    if(res.status === 400){
-    console.log("hi");
+    if(res.status === 200 || 201){
+        setIsSuccessful(true)
+    }
+
+    else if(res.status === 400){
+        console.log("hi");
     }
     console.log(res);
     } else {
         setHasFailed(true)
     }
 }
-    if(variant === 1){
         return (
             <Dialog>
                     <DialogTrigger asChild>
@@ -64,17 +65,17 @@ export default function ShowDialog({variant}:setprop){
                         }}>
                             <FormDiv>
                                 <Label htmlFor="presentationName">Navn</Label>
-                                <Input type="text" placeholder="Navn" name="presentationName" required onChange={(e) => {
+                                <Input type="text" placeholder="Navn" id="presentationName" required onChange={(e) => {
                                     presName = e.target.value
                                 }}></Input>
                                 
                                 <Label htmlFor="BedriftName">Bedriftsnavn</Label>
-                                <Input type="text" placeholder="Bedriftsnavn" required onChange={(e) => {
+                                <Input type="text" placeholder="Bedriftsnavn" id="BedriftName" required onChange={(e) => {
                                     compName = e.target.value
                                 }}></Input>
                                 
                                 <Label htmlFor="presentationDescription">Beskrivelse</Label>
-                                <Textarea placeholder="Foredragsbeskrivelse" required onChange={(e) => {
+                                <Textarea placeholder="Foredragsbeskrivelse" id="presentationDescription" required onChange={(e) => {
                                     desc = e.target.value
                                 }}></Textarea>
                             </FormDiv>
@@ -84,7 +85,7 @@ export default function ShowDialog({variant}:setprop){
                             <div className="flex gap-5 justify-center flex-col">
                                 <FormDiv>
                                     <Label htmlFor="roomselect">Velg Rom</Label>
-                                    <Select name="roomselect" required value={room} onValueChange={(value) => {
+                                    <Select required value={room} onValueChange={(value) => {
                                         setRoom(value)
                                         console.log(value)
                                     }}>
@@ -118,16 +119,23 @@ export default function ShowDialog({variant}:setprop){
                                 </div>
 
                             </div>
+
+                            {hasFailed && <div className="bg-red-200 border-2 border-red-800 text-red-800 p-5 mt-5">
+                                <Typography>Noe har gått galt. Prøv igjen senere.</Typography>
+                            </div>}
+
+                            {isSuccesssful && <div className="bg-green-200 border-2 border-green-800 text-green-800 p-5 mt-5">
+                                <Typography>Suksess! Manuelt Refresh siden for å se oppdaterte resultater.
+                                </Typography>    
+                            </div>}
                             <div className="flex justify-center pt-5">
                                 <Button onClick={() => {
                                     WriteWord();
-                                }}>Lag Foredrag</Button>
+                                }} disabled={isSuccesssful}>Lag Foredrag</Button>
                             </div>
                             
                         </form>
                     </DialogContent>
                 </Dialog>
         )
-    }
-
 }

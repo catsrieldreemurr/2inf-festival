@@ -1493,12 +1493,44 @@
       "rom": "Auditorium A"
     },
     {
-      "tittel": "my rival",
-      "beskrivelse": "you got me **********",
+      "tittel": "234rwer",
+      "beskrivelse": "ewrewrewr",
       "rom": "Auditorium A",
-      "startTid": "11:00",
-      "sluttTid": "12:30",
-      "bedriftPlainText": "my idol"
+      "startTid": "03:24",
+      "sluttTid": "23:55",
+      "bedriftPlainText": "werewr"
+    },
+    {
+      "tittel": "2344ewrewr",
+      "beskrivelse": "ewrewrewr",
+      "rom": "Auditorium A",
+      "startTid": "03:42",
+      "sluttTid": "05:55",
+      "bedriftPlainText": "ewrewr"
+    },
+    {
+      "tittel": "2344ewrewr",
+      "beskrivelse": "ewrrr",
+      "rom": "Auditorium A",
+      "startTid": "03:24",
+      "sluttTid": "23:44",
+      "bedriftPlainText": "ewrr"
+    },
+    {
+      "tittel": "ewrrr",
+      "beskrivelse": "werrr",
+      "rom": "Auditorium A",
+      "startTid": "04:04",
+      "sluttTid": "23:44",
+      "bedriftPlainText": "ewrrr"
+    },
+    {
+      "tittel": "ewrr",
+      "beskrivelse": "werewr",
+      "rom": "Auditorium A",
+      "startTid": "23:44",
+      "sluttTid": "23:44",
+      "bedriftPlainText": "ewrr"
     }
   ],
   "workshops": [

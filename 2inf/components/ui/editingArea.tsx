@@ -9,7 +9,7 @@ export default function EditingArea(){
         <div>
             <Typography variant="h3" isBold isCentered>Muligheter</Typography>
             <div className="flex justify-center gap-5 p-5">
-                <ShowDialog variant={1}></ShowDialog>
+                <ShowDialog></ShowDialog>
                 <Button className="p-5">Slett Eldste Foredrag</Button>
             </div>
 
