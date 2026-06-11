@@ -56,6 +56,7 @@ interface Foredrag{
     maksPlasser: number
     kategori: string
     rom: string
+    bedriftPlainText: string
 }
 
 interface Workshops{
@@ -79,6 +80,15 @@ interface AllFetchedData{
     workshops: Workshops[]
 }
 
+interface EditedObjectData{
+    name: string
+    compName: string
+    desc: string
+    room: string
+    startTime: string
+    stopTime: string
+}
+
 export type {Festival as Festival}
 export type {Bedrifter as Bedrifter}
 export type {Laerere as Laerere}
@@ -87,3 +97,4 @@ export type {Rom as Rom}
 export type {Foredrag as Foredrag}
 export type {Workshops as Workshops}
 export type {AllFetchedData as AllFetchedData}
+export type {EditedObjectData as EditedObjectData}

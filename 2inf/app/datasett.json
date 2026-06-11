@@ -1491,6 +1491,14 @@
       "maksPlasser": 120,
       "kategori": "Nettverk",
       "rom": "Auditorium A"
+    },
+    {
+      "tittel": "my rival",
+      "beskrivelse": "you got me **********",
+      "rom": "Auditorium A",
+      "startTid": "11:00",
+      "sluttTid": "12:30",
+      "bedriftPlainText": "my idol"
     }
   ],
   "workshops": [

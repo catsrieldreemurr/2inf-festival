@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 import { Button } from "./button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./dialog"
 import FormDiv from "./formdiv"
@@ -15,6 +16,39 @@ interface setprop{
 // Strap in ladies and gentlemen, this is gonna be one HELL of a file
 
 export default function ShowDialog({variant}:setprop){
+    let presName = ""
+    let compName = ""
+    let desc = ""
+    const [room, setRoom] = useState("Auditorium A")
+    let startTime = ""
+    let stopTime = ""
+
+    const [hasFailed, setHasFailed] = useState(false)
+
+    async function WriteWord() {
+    if(presName !== "" && compName !== "" && desc !== "" && room !== "" && startTime !== "" && stopTime !== ""){
+        setHasFailed(false)
+        const res = await fetch("/api/addJSON", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            name: presName,
+            compName: compName,
+            desc: desc,
+            room: room, 
+            startTime: startTime,
+            stopTime: stopTime
+        })
+    });
+
+    if(res.status === 400){
+    console.log("hi");
+    }
+    console.log(res);
+    } else {
+        setHasFailed(true)
+    }
+}
     if(variant === 1){
         return (
             <Dialog>
@@ -30,13 +64,19 @@ export default function ShowDialog({variant}:setprop){
                         }}>
                             <FormDiv>
                                 <Label htmlFor="presentationName">Navn</Label>
-                                <Input type="text" placeholder="Navn" name="presentationName" required></Input>
+                                <Input type="text" placeholder="Navn" name="presentationName" required onChange={(e) => {
+                                    presName = e.target.value
+                                }}></Input>
                                 
                                 <Label htmlFor="BedriftName">Bedriftsnavn</Label>
-                                <Input type="text" placeholder="Bedriftsnavn" required></Input>
+                                <Input type="text" placeholder="Bedriftsnavn" required onChange={(e) => {
+                                    compName = e.target.value
+                                }}></Input>
                                 
                                 <Label htmlFor="presentationDescription">Beskrivelse</Label>
-                                <Textarea placeholder="Foredragsbeskrivelse" required></Textarea>
+                                <Textarea placeholder="Foredragsbeskrivelse" required onChange={(e) => {
+                                    desc = e.target.value
+                                }}></Textarea>
                             </FormDiv>
 
                             <span className="p-5"></span>
@@ -44,7 +84,10 @@ export default function ShowDialog({variant}:setprop){
                             <div className="flex gap-5 justify-center flex-col">
                                 <FormDiv>
                                     <Label htmlFor="roomselect">Velg Rom</Label>
-                                    <Select name="roomselect" required>
+                                    <Select name="roomselect" required value={room} onValueChange={(value) => {
+                                        setRoom(value)
+                                        console.log(value)
+                                    }}>
                                         <SelectTrigger>
                                             <SelectValue placeholder="Auditorium x"></SelectValue>
                                         </SelectTrigger>
@@ -61,18 +104,24 @@ export default function ShowDialog({variant}:setprop){
                                 <div className="flex gap-5 justify-center">
                                 <FormDiv>
                                     <Label htmlFor="setStart">Set Startstid</Label> 
-                                    <Input type="time" required name="setStart" className="w-[10rem]"></Input>
+                                    <Input type="time" required name="setStart" className="w-[10rem]" onChange={(e) => {
+                                    startTime = e.target.value
+                                }}></Input>
                                 </FormDiv>
 
                                 <FormDiv>
                                     <Label htmlFor="setStop">Set Sluttstid</Label> 
-                                    <Input type="time" required name="setStop" className="w-[10rem]"></Input>
+                                    <Input type="time" required name="setStop" className="w-[10rem]" onChange={(e) => {
+                                    stopTime = e.target.value
+                                }}></Input>
                                 </FormDiv>
                                 </div>
 
                             </div>
                             <div className="flex justify-center pt-5">
-                                <Button>Lag Foredrag</Button>
+                                <Button onClick={() => {
+                                    WriteWord();
+                                }}>Lag Foredrag</Button>
                             </div>
                             
                         </form>

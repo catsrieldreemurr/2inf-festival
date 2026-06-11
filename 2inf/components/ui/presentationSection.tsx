@@ -28,6 +28,7 @@ export default function PreseentationSection(){
                             <Typography variant="h4" isBold>{index.tittel}</Typography>
                             <Typography>{index.beskrivelse}</Typography>
                             <Typography>{index.rom}</Typography>
+                            <Typography>Bedrift: {index.holderBedriftId || index.bedriftPlainText}</Typography>
                             <div>
                                 <Typography>{index.startTid} - {index.sluttTid}</Typography>
                             </div>
