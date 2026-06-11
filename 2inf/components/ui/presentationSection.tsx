@@ -27,6 +27,7 @@ export default function PreseentationSection(){
                         <div className="p-5 bg-gray-200 text-center" key={key}>
                             <Typography variant="h4" isBold>{index.tittel}</Typography>
                             <Typography>{index.beskrivelse}</Typography>
+                            <Typography>{index.rom}</Typography>
                             <div>
                                 <Typography>{index.startTid} - {index.sluttTid}</Typography>
                             </div>

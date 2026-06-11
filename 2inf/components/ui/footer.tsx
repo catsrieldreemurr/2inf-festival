@@ -11,6 +11,8 @@ export default function Footerbar(){
             <FooterBox>
                 <Typography variant="h1" isBold>2INF-Festivalen</Typography>
                 <Typography>Innlandets beste møtearena</Typography>
+                
+                <Link href={"/staffedit"}><Typography spacer style="hover:underline text-red-200">For Arrangører</Typography></Link>
             </FooterBox>
 
             <FooterBox>
