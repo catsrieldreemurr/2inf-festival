@@ -3,6 +3,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import Typography from "./typography";
 import { Dialog, DialogContent, DialogTrigger } from "./dialog";
 import ShowDialog from "./showDialog";
+import DeleteLatest from "./deleteUI";
 
 export default function EditingArea(){
     return (
@@ -10,7 +11,7 @@ export default function EditingArea(){
             <Typography variant="h3" isBold isCentered>Muligheter</Typography>
             <div className="flex justify-center gap-5 p-5">
                 <ShowDialog></ShowDialog>
-                <Button className="p-5">Slett Eldste Foredrag</Button>
+                <DeleteLatest></DeleteLatest>
             </div>
 
 
